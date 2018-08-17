@@ -118,7 +118,7 @@ exit 1
 ```
 
 ## Issue Reporting
-If you found a bug, have a feature request, or a design recommendation, please open a new issue at this repository's issues section **(Add link to issue section)**. If you find a security vulnerablility, please do not report it on the public GitHub issue tracker but instead contact [Crypto4a](https://crypto4a.com/contact-crypto4a/) directly.
+If you found a bug, have a feature request, or a design recommendation, please open a new issue at this repository's [issues section](https://github.com/crypto4a/spore-client-bash/issues). If you find a security vulnerablility, please do not report it on the public GitHub issue tracker but instead contact [Crypto4a](https://crypto4a.com/contact-crypto4a/) directly.
 
 ## Author
 [Crypto4a](https://crypto4a.com/)
