@@ -9,12 +9,12 @@ The **Spore** program makes use of the following programs:
 - [OpenSSL](https://www.openssl.org/)
 - [cURL](https://curl.haxx.se/)
 
-(##known-spore-servers)
+## Known Spore Servers<a name="known-spore-servers">
 (Add link to known spore servers)
 
 ## Usage
 ### Choose a server
-Any of the server from the [Known Spore Servers](##known-spore-servers) section offer good quality entropy through the Spore Protocol.
+Any of the server from the [Known Spore Servers](#known-spore-servers) section offer good quality entropy through the Spore Protocol.
 
 ### Testing the Connection
 A simple way of testing the connection is to simply send a `getInfo` request. This will also give us basic information on the server, namely it's name and the quantity of the entropy it serves.
