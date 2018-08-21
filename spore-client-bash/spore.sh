@@ -85,13 +85,13 @@ default_command() {
 # verify dependencies
 ##########################
 verify_dependencies() {
-    if ["$(which openssl)" = ""]
+    if [ "$(which openssl)" = "" ]
     then
         echo "This script requires openssl, please resolve and try again."
         exit 1
     fi 
 
-    if ["$(which curl)" = ""]
+    if [ "$(which curl)" = "" ]
     then
         echo "This script requires curl, please resolve and try again." >&2
         exit 1

@@ -22,6 +22,7 @@ fi
 cp -r $USER_PWD/spore.sh /usr/local/bin/spore
 cp -r $USER_PWD/spore.conf /usr/local/etc/spore/spore.conf
 
+# Create user
 mkdir -p /var/cache/$USER
 if ! getent passwd $USER >/dev/null
 then
@@ -30,6 +31,7 @@ then
 fi
 chown -R $USER /var/cache/$USER
 
+# Create service
 mkdir -p $SYSTEMDIR
 if [ -e "$SYSTEMDIR/${SPORESRV}.service" ]
 then
