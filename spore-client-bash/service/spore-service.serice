@@ -1,0 +1,13 @@
+[Unit]
+Description=spore-entropy
+After=network.target
+
+[Service]
+Type=simple
+User=spore
+ExecStart=/usr/local/share/spore/spore-service.sh
+Restart=on-failure
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
