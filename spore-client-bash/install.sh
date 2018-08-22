@@ -44,7 +44,7 @@ then
     systemctl stop $SPORESRV
     systemctl disable $SPORESRV
 fi
-cp ./service/${SPORESRV}.service $SYSTEMDIR/.
+cp ./service/${SPORESRV}.service $SYSTEMDIR/$SPORESRV.service
 
 systemctl deamon-reload
 systemctl enable $SPORESRV
