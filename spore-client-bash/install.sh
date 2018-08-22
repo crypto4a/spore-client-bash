@@ -19,8 +19,13 @@ then
 fi
 
 # Copy files
+mkdir -p /usr/local/bin
 cp -r ./spore.sh /usr/local/bin/spore
+
+mkdir -p /usr/local/etc/spore
 cp -r ./service/spore-service.config /usr/local/etc/spore/spore-service.config
+
+mkdir -p /usr/local/share/spore
 cp -r ./service/spore-service.sh /usr/local/share/spore/spore-service.sh
 
 # Create user
