@@ -19,11 +19,9 @@ then
 fi
 
 # Copy files
-cp -r $USER_PWD/spore.sh /usr/local/bin/spore
-cp -r $USER_PWD/service/spore-service.config \
-/usr/local/etc/spore/spore-service.conf
-
-cp -r $USER_PWD/service
+cp -r ./spore.sh /usr/local/bin/spore
+cp -r ./service/spore-service.config /usr/local/etc/spore/spore-service.config
+cp -r ./service/spore-service.sh /usr/local/share/spore/spore-service.sh
 
 # Create user
 mkdir -p /var/cache/$USER
@@ -41,7 +39,7 @@ then
     systemctl stop $SPORESRV
     systemctl disable $SPORESRV
 fi
-cp $USER_PWD/service/${SPORESRV}.service $SYSTEMDIR/.
+cp ./service/${SPORESRV}.service $SYSTEMDIR/.
 
 systemctl deamon-reload
 systemctl enable $SPORESRV
