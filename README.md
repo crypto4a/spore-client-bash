@@ -10,7 +10,9 @@ The **Spore** program makes use of the following programs:
 - [cURL](https://curl.haxx.se/)
 
 ## Known Spore Servers<a name="known-spore-servers">
-(Add link to known spore servers)
+- rootofqaos.com
+- rootofentropy.com
+- entropy.2keys.io
 
 ## Usage
 ### Choose a server
