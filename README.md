@@ -16,7 +16,7 @@ The **Spore** program makes use of the following programs:
 
 ## Usage
 ### Choose a server
-Any of the server from the [Known Spore Servers](#known-spore-servers) section offer good quality entropy through the Spore Protocol.
+Any of the servers from the [Known Spore Servers](#known-spore-servers) section offer good quality entropy through the Spore Protocol.
 
 ### Testing the Connection
 A simple way of testing the connection is to simply send a `getInfo` request. This will also give us basic information on the server, namely it's name and the quantity of the entropy it serves.
@@ -44,7 +44,7 @@ entropyResponse=$(spore -e "" $url)
 ```
 
 ### Adding the Entropy to our System
-Now that we received good quality entropy, we can seed our local source of randomness. It is best practice to first perform some hash to combine the received entropy with the freshly received entropy. Indeed, if one was to simply seed it local entropy source with compromised entropy, his system would become deterministic to the malicious party. 
+Now that we received good quality entropy, we can seed our local source of randomness. It is best practice to first perform some hash to combine the received entropy with some local entropy. Indeed, if one was to simply seed it local entropy source with compromised entropy, the system would become deterministic to the malicious party. 
 
 In linux, when writing to /dev/urandom (the local source of randomness), the system actually adds to the pool of already existing randomness.
 ```
