@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # $USER_PWD gets the path of the folder from which the self-extracting script
-# is executed. 
+# is executed.
 
 # PKG="spore"
 USER="spore"
@@ -46,6 +46,6 @@ then
 fi
 cp ./service/${SPORESRV}.service $SYSTEMDIR/${SPORESRV}.service
 
-systemctl deamon-reload
+systemctl daemon-reload
 systemctl enable $SPORESRV
 systemctl start $SPORESRV

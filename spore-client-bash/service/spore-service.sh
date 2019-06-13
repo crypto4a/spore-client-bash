@@ -53,23 +53,23 @@ fi
 # Generating b64url challenge
 if [ $challenge -eq 0 ]; then
     b64challenge=""
-else    
+else
     challenge=$(dd status=none if=/dev/urandom bs=$challenge count=1)
     b64challenge=$(echo $challenge | base64url_encode)
 fi
 
 # Performing getEntropy request
-entropyResponse=$(./spore -e $b64challenge $server)
+entropyResponse=$(./spore.sh -e $b64challenge $server)
 
 # Verify signature if specified
 if [[ $verify == True ]]; then
     jwt=($(echo $entropyResponse | jq -r '.JWT' | tr '.' ' '))
-    
-    pk=$(./spore -c $server | 
-    jq -r '.certificateChain' | 
+
+    pk=$(./spore.sh -c $server |
+    jq -r '.certificateChain' |
     openssl x509 -pubkey -noout)
 
-    echo -n ${jwt[0]}.${jwt[1]} | 
+    echo -n ${jwt[0]}.${jwt[1]} |
     openssl dgst -sha256 -verify <(echo "$pk") \
     -signature <(base64url_decode ${jwt[2]})
 
@@ -82,7 +82,7 @@ if [[ $verify == True ]]; then
     rxEntropy=$(echo "$claims" | jq -r '.entropy')
     rxChallenge=$(echo "$claims" | jq -r '.challenge')
     rxTimestamp=$(echo "$claims" | jq -r '.timestamp')
-else    
+else
     rxEntropy=$(echo $entropyResponse | jq -r '.entropy')
     rxChallenge=$(echo $entropyResponse | jq -r '.challenge')
     rxTimestamp=$(echo $entropyResponse | jq -r '.timestamp')
